@@ -1,0 +1,10 @@
+<div [style.background-image]="'url(' + headerData.imageLink + ')'" class="bg-cover bg-center pb-10">
+  <app-nav-bar [links]="defaultNavLinks"></app-nav-bar>
+  <h1 class="text-white text-center py-20 font-semibold text-2xl">{{headerData.title}}</h1>
+</div>
+<div class="bg-white container max-w-5xl mx-auto ">
+  <ng-content></ng-content>
+</div>
+
+<app-footer></app-footer>
+

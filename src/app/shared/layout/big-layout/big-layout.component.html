@@ -1,0 +1,14 @@
+
+
+<div class="bg-[url('/assets/images/header-images/big-header/1.png')]  bg-cover bg-center  pb-10">
+    <app-nav-bar [links]="defaultNavLinks"></app-nav-bar>
+    <app-zone-text [zoneTextData]="zoneTextData"></app-zone-text>
+
+</div>
+<div class="bg-white container max-w-5xl mx-auto ">
+  <ng-content></ng-content>
+</div>
+
+<app-cards [cardsContent] = "cardsContent"></app-cards>
+<app-footer></app-footer>
+
