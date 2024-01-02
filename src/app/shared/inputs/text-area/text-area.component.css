@@ -1,0 +1,12 @@
+textarea{
+  background-color: #EDEDED;
+  font-size: 14px;
+  color: #3B3B3B;
+  outline: none;
+  border-radius: 3px;
+
+}
+input::placeholder{
+  color: #656565;
+
+}

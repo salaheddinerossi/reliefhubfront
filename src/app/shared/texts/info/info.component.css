@@ -1,0 +1,7 @@
+.info-container {
+  display: flex;
+  align-items: center;
+}
+.info-icon {
+  margin-right: 10px;
+}
