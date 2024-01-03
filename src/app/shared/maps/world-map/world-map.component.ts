@@ -1,6 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {PointDto} from "../../../models/PointDto";
+import {Component, Input, NgZone, OnInit} from '@angular/core';
 import * as L from 'leaflet';
+import {Disaster} from "../../../models/Disaster";
+import {Router} from "@angular/router";
+import {marker} from "leaflet";
 
 const customIcon = L.icon({
   iconUrl: 'assets/icons/pins/redpin.png',
@@ -19,23 +21,19 @@ const customIcon = L.icon({
 
 
 
-export class WorldMapComponent {
+export class WorldMapComponent implements OnInit{
 
-
+  constructor(private router:Router,private zone:NgZone) {
+  }
 
   private map!: L.Map;
 
-  @Input() title:string = "";
-  @Input() subtitle:string = "";
-  @Input() additionalSubtitle = ""
-
-  @Input() points: PointDto[] = [
-    { latitude: 51.5, longitude: -0.09, link: 'https://example.com/disaster/1', disasterId: 1 ,name:"hello"},
-    { latitude: 48.8566, longitude: 2.3522, link: 'https://example.com/disaster/2', disasterId: 2,name:"hello" }
-  ];
+  @Input() mapText={title:"",subTitle: "",additionalSubtitle: ""}
+  @Input() disasters:Disaster[]=[];
 
   ngOnInit() {
     this.initMap();
+    console.log(this.disasters)
   }
 
 
@@ -47,10 +45,13 @@ export class WorldMapComponent {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
 
-    this.points.forEach(point => {
-      L.marker([point.latitude, point.longitude],{ icon: customIcon })
+    this.disasters.forEach(disaster => {
+      L.marker([disaster.center.latitude, disaster.center.longitude],{ icon: customIcon })
         .addTo(this.map)
-        .bindPopup(`<a href="${point.link}" target="_blank"> ${point.name}</a>`);
+        .on('click', () => {
+        this.zone.run(() => this.router.navigate(["/announcements"]));
+
+      });
     });
   }
 

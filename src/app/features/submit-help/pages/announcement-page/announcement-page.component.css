@@ -1,0 +1,27 @@
+.description{
+  color: #555555;
+  font-size: 15px;
+}
+.text{
+  font-size: 13px;
+  color: #5A5A5A;
+}
+.map-style{
+  height: 200px;
+  border-radius: 10px;
+  outline: none;
+}
+.target-name{
+    color: #148980;
+    font-size: 13px;
+}
+
+.needed{
+  color: #5A5A5A;
+  font-size: 11px;
+}
+.submit-help{
+  font-size: 11px;
+  background-color: #148980;
+
+}

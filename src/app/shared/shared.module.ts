@@ -43,7 +43,7 @@ import { InfoComponent } from './texts/info/info.component';
         AnnouncementComponent,
         TitleComponent,
         DescriptionComponent,
-        InfoComponent
+        InfoComponent,
     ],
   imports: [
     CommonModule,
@@ -63,7 +63,8 @@ import { InfoComponent } from './texts/info/info.component';
         FormSelectInputComponent,
         GreenSelectInputComponent,
         TitleComponent,
-        WorldMapComponent
+        WorldMapComponent,
+        AnnouncementComponent
 
     ]
 })

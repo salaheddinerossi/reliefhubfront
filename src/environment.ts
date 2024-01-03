@@ -56,7 +56,20 @@ export const environment = {
 
   helpAnnouncementHeader:{
     imageLink:'/assets/images/header-images/small-header/smallHeader1.png',
-    title:"Help announcement"
-  }
+    title:"Help announcement",
+    title2:"Be the Change You Want to See"
+  },
+  mapText:{
+    title:"Visualize Areas in Need",
+    subTitle:"Explore our interactive map to see real-time update on areas requering assistance.",
+    additionalSubtitle:"Every Pin represents lives that need your help"
+  },
+  authorizationSelect:[
+    {label: 'All', value: 100},
+    {label: 'authorization1', value: 1},
+    {label: 'authorization2', value: 2},
+    {label: 'authorization3', value: 3},
+    {label: 'authorization4', value: 4},
+  ]
 
 };

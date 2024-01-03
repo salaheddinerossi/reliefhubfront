@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {environment} from "../../../../environment";
+import {Component, Input} from '@angular/core';
+import {NavLink} from "../../../models/nav-link";
 
 @Component({
   selector: 'app-small-layout',
@@ -8,8 +8,9 @@ import {environment} from "../../../../environment";
 })
 export class SmallLayoutComponent {
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData=environment.helpAnnouncementHeader;
+  @Input() defaultNavLinks:NavLink[]=[];
+  @Input() headerData={imageLink: "",title:"",title2:""}
+
 
 
 }
