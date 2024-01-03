@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-zone-text',
   templateUrl: './zone-text.component.html',
@@ -22,6 +23,5 @@ export class ZoneTextComponent {
 
   navigateTo(s: string) {
     this.router.navigate([s]);
-
   }
 }

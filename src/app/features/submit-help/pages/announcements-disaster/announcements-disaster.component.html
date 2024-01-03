@@ -1,0 +1,20 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+
+    <app-title  [title]="title"></app-title>
+    <div class="container mx-auto px-8">
+        <div class="flex justify-between items-center my-4">
+            <div class="flex-grow">
+            </div>
+            <app-green-select-input [options]="selectOptions" [selectedValue]="defaultSelectedValue"
+                                    (selectedValueChange)="onSelectChange($event)"></app-green-select-input>
+        </div>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-4" *ngFor="let announcement of filteredAnnouncements">
+                <app-announcement [announcement]="announcement"></app-announcement>
+            </div>
+        </div>
+    </div>
+
+
+
+</app-small-layout>

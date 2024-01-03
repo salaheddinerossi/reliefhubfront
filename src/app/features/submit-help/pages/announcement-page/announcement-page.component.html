@@ -1,0 +1,41 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+
+    <app-title  [title]="announcement.title"></app-title>
+
+  <div class="flex gap-4  ">
+    <div class="w-1/3 mx-5">
+      <img src="/assets/images/default-images/announcement.png" alt="Child in disaster" class="max-w-full h-auto rounded-lg shadow-md">
+      <div class="space-y-4 py-10">
+        <div *ngFor="let target of announcement.targets" class="bg-white p-4 rounded shadow">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-gray-700 font-semibold target-name font-semibold">{{ target.name }}</span>
+            <span class="text-sm font-light text-xs text-gray-700">{{ target.currentValue / target.targetValue | percent }}</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+            <div class="bg-blue-600 h-2.5 rounded-full" [style.width]="(target.currentValue / target.targetValue * 100) + '%'"></div>
+          </div>
+          <div class="flex justify-between items-center pt-4 ">
+            <span class="text-gray-500 text-sm needed font-light">{{ target.currentValue }} of {{ target.targetValue }} needed</span>
+            <button (click)="navigateTo(target.id)" class="submit-help rounded text-white py-2 px-3 font-bold" type="button">
+              Donate Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-2/3">
+      <div>
+        <h1 class="description pb-3 font-semibold border-b">Description</h1>
+        <p class="pt-2 text ">{{announcement.description}}</p>
+        <h1 class="description pb-3 pt-5 font-semibold border-b">Map</h1>
+        <div id="map" class="map-style mr-5 my-5" ></div>
+        <h1 class="description  font-semibold border-b pb-3">Organization Info</h1>
+        <p class="font-light text-xs"> email:{{announcement.organizationEmail}}</p>
+        <p class="font-light text-xs"> name :{{announcement.organizationName}}</p>
+
+      </div>
+    </div>
+  </div>
+
+</app-small-layout>

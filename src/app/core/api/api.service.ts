@@ -15,7 +15,7 @@ export class ApiService {
   private setHeaders(): HttpHeaders {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.getAuthToken()}` // Example of setting an auth token
+      'Authorization': `Bearer ${this.getAuthToken()}`
     });
     return headers;
   }
