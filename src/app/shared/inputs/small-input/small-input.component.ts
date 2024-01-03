@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class SmallInputComponent {
   @Input() placeholder: string = '';
   @Input() value: string = '';
+  @Input() type: string = '';
   @Output() valueChange = new EventEmitter<string>();
 
   onInput(event: any): void {

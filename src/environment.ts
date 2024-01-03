@@ -1,3 +1,6 @@
+import {HelpForms} from "./app/features/forms/models/form-models";
+
+
 export const environment = {
 
   apiUrl: 'http://143.244.199.239/',
@@ -70,6 +73,35 @@ export const environment = {
     {label: 'authorization2', value: 2},
     {label: 'authorization3', value: 3},
     {label: 'authorization4', value: 4},
-  ]
+  ],
+  helpForms: {
+
+    '1': [
+      { placeholder: 'Full name', type: 'text' },
+      { placeholder: 'Phone', type: 'tel' },
+      { placeholder: 'Blood type', type: 'text'},
+      { placeholder: 'Address', type: 'text' }
+    ],
+    '2': [
+      { placeholder: 'Full name', type: 'text' },
+      { placeholder: 'Phone', type: 'tel' },
+      { placeholder: 'Sex', type: 'text'},
+      { placeholder: 'Address', type: 'text' },
+      { placeholder: 'Describe how can you help?', type: 'textarea' }
+    ],
+    '3': [
+      { placeholder: 'Full name', type: 'text' },
+      { placeholder: 'Phone', type: 'tel' },
+      { placeholder: 'Number', type: 'number' },
+      { placeholder: 'Address', type: 'text' }
+    ],
+    '4': [
+      { placeholder: 'Full name', type: 'text' },
+      { placeholder: 'Card number', type: 'text' },
+      { placeholder: 'Date expiration', type: 'month' },
+      { placeholder: 'CVC', type: 'number' }
+    ]
+  } as HelpForms,
+
 
 };

@@ -1,0 +1,31 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <app-title [title]="titlePage"></app-title>
+  <form *ngIf="formFields" #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ng-container *ngFor="let field of formFields; let i = index">
+        <ng-container *ngIf="field.type !== 'dropdown' && field.type !== 'textarea'">
+          <app-small-input
+            [placeholder]="field.placeholder"
+            [type]="field.type"
+            [(ngModel)]="helpForm[field.placeholder]"
+            [name]="field.placeholder + i"
+            #inputField="ngModel" required>
+          </app-small-input>
+        </ng-container>
+
+
+        <ng-container *ngIf="field.type === 'textarea'">
+          <app-text-area
+            [placeholder]="field.placeholder"
+            [(ngModel)]="helpForm[field.placeholder]"
+            [name]="field.placeholder + i"
+          #textareaField="ngModel"
+          required>
+          </app-text-area>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded" [disabled]="!helpFormDirective.valid">Submit</button>
+  </form>
+</app-small-layout>
