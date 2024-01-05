@@ -1,3 +1,6 @@
-<select [ngModel]="selectedValue" (ngModelChange)="onChange($event)" class=" own-style w-1/2 py-2 px-4  custom-select">
-  <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
+<select [ngModel]="selectedValue" (ngModelChange)="onChange($event)"  class=" own-style w-full py-3 px-4  custom-select">
+  <option value=0 selected disabled>{{placeholder}}</option>
+  <option *ngFor="let option of options" [ngValue]="option.value">
+    {{ option.label }}
+  </option>
 </select>

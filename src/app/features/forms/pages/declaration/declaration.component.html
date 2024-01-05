@@ -1,0 +1,63 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+
+  <app-title [title]="title"></app-title>
+
+  <form  #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-wrap -mx-3 overflow-hidden pb-20">
+
+      <div class="my-3  pl-20 pr-5 w-full overflow-hidden lg:w-1/2">
+        <div class="mb-4">
+          <app-small-input
+            [placeholder]="'Full Name'"
+            [type]="'text'"
+            [(value)]="declaration.fullName"
+            [name]="'fullName'"
+          ></app-small-input>
+        </div>
+
+        <div class="mb-4">
+          <app-small-input
+            [placeholder]="'phone'"
+            [type]="'number'"
+            [(value)]="declaration.phoneNumber"
+            [name]="'phone'"
+          ></app-small-input>
+        </div>
+
+
+        <div class="mb-4">
+          <app-small-input
+            [placeholder]="'address'"
+            [type]="'text'"
+            [(value)]="declaration.address"
+            [name]="'address'"
+          ></app-small-input>
+        </div>
+        <div>
+          <app-text-area
+
+            [placeholder]="'description'"
+            [(value)]="declaration.description"
+            [name]="'description'"
+
+          >
+
+          </app-text-area>
+        </div>
+        <div class="pt-3">
+          <app-submite-button></app-submite-button>
+
+        </div>
+      </div>
+
+      <div class="my-3 px-3 w-full overflow-hidden lg:w-1/2">
+        <p class="text-s font-light text-gray-700 mb-2">Precize your zone: </p>
+        <div id="map" style="height: 270px;" class="mr-10 ml-5 rounded"></div>
+
+      </div>
+
+    </div>
+  </form>
+
+
+</app-small-layout>

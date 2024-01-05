@@ -1,1 +1,7 @@
-<textarea [placeholder]="placeholder" [value]="value" (input)="onInput($event)" class="w-full own-style py-2 px-4 "></textarea>
+<textarea
+  [placeholder]="placeholder"
+  [value]="internalValue"
+  [name]="name"
+  (input)="onInput($event)"
+  class="w-full py-2 px-4">
+</textarea>

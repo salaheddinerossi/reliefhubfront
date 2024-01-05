@@ -1,0 +1,33 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <app-title [title]="titlePage"></app-title>
+  <form *ngIf="formFields.length > 0" #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mx-16">
+      <ng-container *ngFor="let field of formFields; index as i">
+        <!-- Render input fields based on the type -->
+        <app-small-input
+          *ngIf="field.type !== 'textarea'"
+          [placeholder]="field.placeholder"
+          [type]="field.type"
+          [(value)]="formValues[field.name]"
+          [name]="field.name + i"
+          required>
+        </app-small-input>
+
+        <!-- Render textarea field -->
+        <app-text-area
+          *ngIf="field.type === 'textarea'"
+          [placeholder]="field.placeholder"
+          [(value)]="formValues[field.name]"
+          [name]="field.name"
+          required>
+        </app-text-area>
+      </ng-container>
+
+      <div class="pb-6">
+        <app-submite-button  ></app-submite-button>
+      </div>
+
+    </div>
+
+  </form>
+</app-small-layout>

@@ -1,3 +1,6 @@
+import {HelpForms} from "./app/features/forms/models/form-models";
+
+
 export const environment = {
 
   apiUrl: 'http://143.244.199.239/',
@@ -70,6 +73,41 @@ export const environment = {
     {label: 'authorization2', value: 2},
     {label: 'authorization3', value: 3},
     {label: 'authorization4', value: 4},
-  ]
+  ],
+  helpForms: {
+
+    '1': [
+      { placeholder: 'Full name', type: 'text', name:"fullName"  },
+      { placeholder: 'Phone', type: 'text'  ,name:"phone" },
+      { placeholder: 'Address', type: 'text',name:"address" },
+      { placeholder: 'Blood type', type: 'text' , name:"bloodType"},
+
+    ],
+    '4': [
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text', name:"phone"},
+      { placeholder: 'Address', type: 'text',name:"address" },
+      { placeholder: 'Sex', type: 'text',name:"sex"},
+      { placeholder: 'Describe how can you help?', type: 'textarea',name:"description" }
+    ],
+    '3': [
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text' ,name:"phone"},
+      { placeholder: 'Number', type: 'number',name:"number" },
+      { placeholder: 'Address', type: 'text' ,name:"address"}
+    ],
+    '2': [
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text', name:"phone" },
+      { placeholder: 'Address', type: 'text' ,name:"address"},
+      { placeholder: 'Number', type: 'number' , name:"number" },
+      { placeholder: 'Card number', type: 'number',name:"cardNumber" },
+      { placeholder: 'Date expiration', type: 'text',name:"dateExpiration" },
+      { placeholder: 'CVC', type: 'number',name:"cvc" }
+    ]
+  } as HelpForms,
+
+
+
 
 };
