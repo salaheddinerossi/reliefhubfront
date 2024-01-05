@@ -1,31 +1,33 @@
 <app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
   <app-title [title]="titlePage"></app-title>
-  <form *ngIf="formFields" #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <ng-container *ngFor="let field of formFields; let i = index">
-        <ng-container *ngIf="field.type !== 'dropdown' && field.type !== 'textarea'">
-          <app-small-input
-            [placeholder]="field.placeholder"
-            [type]="field.type"
-            [(ngModel)]="helpForm[field.placeholder]"
-            [name]="field.placeholder + i"
-            #inputField="ngModel" required>
-          </app-small-input>
-        </ng-container>
-
-
-        <ng-container *ngIf="field.type === 'textarea'">
-          <app-text-area
-            [placeholder]="field.placeholder"
-            [(ngModel)]="helpForm[field.placeholder]"
-            [name]="field.placeholder + i"
-          #textareaField="ngModel"
+  <form *ngIf="formFields.length > 0" #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mx-16">
+      <ng-container *ngFor="let field of formFields; index as i">
+        <!-- Render input fields based on the type -->
+        <app-small-input
+          *ngIf="field.type !== 'textarea'"
+          [placeholder]="field.placeholder"
+          [type]="field.type"
+          [(value)]="formValues[field.name]"
+          [name]="field.name + i"
           required>
-          </app-text-area>
-        </ng-container>
+        </app-small-input>
+
+        <!-- Render textarea field -->
+        <app-text-area
+          *ngIf="field.type === 'textarea'"
+          [placeholder]="field.placeholder"
+          [(value)]="formValues[field.name]"
+          [name]="field.name"
+          required>
+        </app-text-area>
       </ng-container>
+
+      <div class="pb-6">
+        <app-submite-button  ></app-submite-button>
+      </div>
+
     </div>
 
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded" [disabled]="!helpFormDirective.valid">Submit</button>
   </form>
 </app-small-layout>

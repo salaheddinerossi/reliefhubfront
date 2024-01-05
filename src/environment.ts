@@ -77,31 +77,37 @@ export const environment = {
   helpForms: {
 
     '1': [
-      { placeholder: 'Full name', type: 'text' },
-      { placeholder: 'Phone', type: 'tel' },
-      { placeholder: 'Blood type', type: 'text'},
-      { placeholder: 'Address', type: 'text' }
-    ],
-    '2': [
-      { placeholder: 'Full name', type: 'text' },
-      { placeholder: 'Phone', type: 'tel' },
-      { placeholder: 'Sex', type: 'text'},
-      { placeholder: 'Address', type: 'text' },
-      { placeholder: 'Describe how can you help?', type: 'textarea' }
-    ],
-    '3': [
-      { placeholder: 'Full name', type: 'text' },
-      { placeholder: 'Phone', type: 'tel' },
-      { placeholder: 'Number', type: 'number' },
-      { placeholder: 'Address', type: 'text' }
+      { placeholder: 'Full name', type: 'text', name:"fullName"  },
+      { placeholder: 'Phone', type: 'text'  ,name:"phone" },
+      { placeholder: 'Address', type: 'text',name:"address" },
+      { placeholder: 'Blood type', type: 'text' , name:"bloodType"},
+
     ],
     '4': [
-      { placeholder: 'Full name', type: 'text' },
-      { placeholder: 'Card number', type: 'text' },
-      { placeholder: 'Date expiration', type: 'month' },
-      { placeholder: 'CVC', type: 'number' }
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text', name:"phone"},
+      { placeholder: 'Address', type: 'text',name:"address" },
+      { placeholder: 'Sex', type: 'text',name:"sex"},
+      { placeholder: 'Describe how can you help?', type: 'textarea',name:"description" }
+    ],
+    '3': [
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text' ,name:"phone"},
+      { placeholder: 'Number', type: 'number',name:"number" },
+      { placeholder: 'Address', type: 'text' ,name:"address"}
+    ],
+    '2': [
+      { placeholder: 'Full name', type: 'text',name:"fullName" },
+      { placeholder: 'Phone', type: 'text', name:"phone" },
+      { placeholder: 'Address', type: 'text' ,name:"address"},
+      { placeholder: 'Number', type: 'number' , name:"number" },
+      { placeholder: 'Card number', type: 'number',name:"cardNumber" },
+      { placeholder: 'Date expiration', type: 'text',name:"dateExpiration" },
+      { placeholder: 'CVC', type: 'number',name:"cvc" }
     ]
   } as HelpForms,
+
+
 
 
 };

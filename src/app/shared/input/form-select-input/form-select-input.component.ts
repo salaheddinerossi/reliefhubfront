@@ -9,6 +9,7 @@ export class FormSelectInputComponent {
 
   @Input() options: {label: string, value: any}[] = [];
   @Input() selectedValue: any;
+  @Input() placeholder:string = "";
   @Output() selectedValueChange = new EventEmitter<any>();
 
   onChange(newValue: any): void {

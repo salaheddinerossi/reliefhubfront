@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-area',
@@ -7,11 +7,24 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class TextAreaComponent {
   @Input() placeholder: string = '';
-  @Input() value: string = '';
+  internalValue: string = '';
+  @Input() name:string = "";
+
+  @Input()
+  get value(): string {
+    return this.internalValue;
+  }
+
+  set value(val: string) {
+    if (val !== this.internalValue) {
+      this.internalValue = val;
+      this.valueChange.emit(this.internalValue);
+    }
+  }
+
   @Output() valueChange = new EventEmitter<string>();
 
   onInput(event: any): void {
-    this.valueChange.emit(event.target.value);
+    this.value = event.target.value;
   }
-
 }

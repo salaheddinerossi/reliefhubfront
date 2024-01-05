@@ -9,8 +9,5 @@ export class SubmiteButtonComponent {
 
   @Output() submitEvent = new EventEmitter<void>();
 
-  onSubmit(): void {
-    this.submitEvent.emit();
-  }
 
 }

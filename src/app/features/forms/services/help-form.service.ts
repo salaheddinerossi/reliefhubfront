@@ -3,6 +3,7 @@ import {ApiService} from "../../../core/api/api.service";
 import {Observable} from "rxjs";
 import {HelpForm} from "../models/HelpForm";
 import {map} from "rxjs/operators";
+import {SubmitHelpRequest} from "../models/SubmitHelpRequest";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,15 @@ export class HelpFormService {
       )
     )
 
+  }
+
+  submitHelp(helpRequest:SubmitHelpRequest){
+    console.log(helpRequest)
+    this.api.post('submithelp/volunteerInfo/', helpRequest)
+      .subscribe(
+        response => console.log(response),
+        error => console.error(error)
+      );
   }
 
 

@@ -2,7 +2,6 @@ import {Component, Input, NgZone, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 import {Disaster} from "../../../models/Disaster";
 import {Router} from "@angular/router";
-import {marker} from "leaflet";
 
 const customIcon = L.icon({
   iconUrl: 'assets/icons/pins/redpin.png',
