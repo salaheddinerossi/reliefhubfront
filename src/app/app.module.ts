@@ -8,6 +8,7 @@ import {SharedModule} from "./shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import {SubmitHelpModule} from "./features/submit-help/submit-help.module";
 import {FormsHelpModule} from "./features/forms/forms.module";
+import {AuthenticationModule} from "./features/authentication/authentication.module";
 
 @NgModule({
   declarations: [
@@ -20,9 +21,8 @@ import {FormsHelpModule} from "./features/forms/forms.module";
     SharedModule,
     FormsModule,
     SubmitHelpModule,
-    FormsHelpModule
-
-
+    FormsHelpModule,
+    AuthenticationModule
   ],
   providers: [],
   exports: [

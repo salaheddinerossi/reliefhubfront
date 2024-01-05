@@ -1,0 +1,64 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <div class="py-10">
+    <app-title [title]="title"></app-title>
+
+    <form #helpFormDirective="ngForm" (ngSubmit)="onSubmit()" class="px-20">
+      <div class="flex w-full " >
+        <div class="flex-grow pr-5">
+          <app-small-input
+            [placeholder]="'name'"
+            [type]="'text'"
+            [(value)]="organizationRegister.name"
+            [name]="'name'"
+          ></app-small-input>
+
+        </div>
+        <div class="flex-grow pl-5">
+          <app-small-input
+            [placeholder]="'address'"
+            [type]="'text'"
+            [(value)]="organizationRegister.address"
+            [name]="'address'"
+
+          ></app-small-input>
+
+        </div>
+      </div>
+
+      <div class="pt-7">
+        <app-text-area
+          [placeholder]="'description'"
+          [(value)]="organizationRegister.description"
+          [name]="'description'"
+
+        ></app-text-area>
+      </div>
+      <div class="flex w-full pt-7" >
+        <div class="flex-grow pr-5">
+          <app-small-input
+            [placeholder]="'email'"
+            [type]="'text'"
+            [(value)]="organizationRegister.email"
+            [name]="'email'"
+          ></app-small-input>
+
+        </div>
+        <div class="flex-grow pl-5">
+          <app-small-input
+            [placeholder]="'password'"
+            [type]="'password'"
+            [(value)]="organizationRegister.password"
+            [name]="'password'"
+          ></app-small-input>
+        </div>
+      </div>
+      <div class="py-5">
+        <input type="file" (change)="onFileSelected($event)" />
+      </div>
+      <div class="w-1/2 mx-auto">
+        <app-large-submite-button [text]="'Sign Up'"></app-large-submite-button>
+      </div>
+    </form>
+  </div>
+
+</app-small-layout>

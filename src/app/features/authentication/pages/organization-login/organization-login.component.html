@@ -1,0 +1,33 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <div class="pt-10">
+    <app-title [title]="title"></app-title>
+  </div>
+  <form class="w-1/2 mx-auto pb-10"  #helpFormDirective="ngForm" (ngSubmit)="onSubmit()">
+    <div class="pb-5">
+      <app-small-input
+        [placeholder]="'email'"
+        [type]="'email'"
+        [(value)]="login.email"
+        [name]="'email'"
+      >
+      </app-small-input>
+
+    </div>
+    <div class="pb-5">
+      <app-small-input
+        [placeholder]="'password'"
+        [type]="'password'"
+        [(value)]="login.password"
+        [name]="'password'"
+      >
+      </app-small-input>
+
+    </div>
+
+    <div class="pb-5">
+      <app-large-submite-button [text]="buttonText"></app-large-submite-button>
+    </div>
+  </form>
+
+
+</app-small-layout>

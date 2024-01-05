@@ -3,6 +3,7 @@ import {ApiService} from "../api/api.service";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {User} from "../../models/user.model";
+import {Login} from "../../models/Login";
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +23,8 @@ export class AuthenticationService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  organizationLogin(email: string, password: string): Observable<any> {
-    return this.apiService.post<any>('/auth/organization/login', { email, password })
+  organizationLogin(login:Login): Observable<any> {
+    return this.apiService.post<any>('auth/organization/login', login)
       .pipe(map(user => {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
@@ -31,8 +32,8 @@ export class AuthenticationService {
       }));
   }
 
-  adminLogin(email: string, password: string): Observable<any> {
-    return this.apiService.post<any>('/auth/admin/login', { email, password })
+  adminLogin(login:Login): Observable<any> {
+    return this.apiService.post<any>('auth/admin/login', login)
       .pipe(map(user => {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);

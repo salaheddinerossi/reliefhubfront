@@ -107,6 +107,8 @@ export const environment = {
     ]
   } as HelpForms,
 
+  storageFile:"https://reliefhub.ams3.digitaloceanspaces.com",
+
 
 
 

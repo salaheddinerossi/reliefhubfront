@@ -7,11 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class LargeSubmiteButtonComponent {
 
-  @Input() text:String = "";
+  @Input() text:string = "";
   @Output() submitEvent = new EventEmitter<void>();
-
-  onSubmit(): void {
-    this.submitEvent.emit();
-  }
 
 }
