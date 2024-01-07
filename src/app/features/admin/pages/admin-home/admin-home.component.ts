@@ -11,5 +11,4 @@ export class AdminHomeComponent {
   organizationNavLinks=environment.organizationNavLinks;
   organizationZoneText=environment.organizationZoneText;
   mapText=environment.mapText;
-
 }
