@@ -39,8 +39,8 @@ export class ApiService {
       .pipe(catchError(this.handleError));
   }
 
-  patch<T>(endpoint: string, body: any): Observable<T> {
-    return this.http.patch<T>(this.baseUrl + endpoint, body, { headers: this.setHeaders() })
+  patch<T>(endpoint: string, body?: any): Observable<T> {
+    return this.http.patch<T>(this.baseUrl + endpoint,  { headers: this.setHeaders() })
       .pipe(catchError(this.handleError));
   }
 

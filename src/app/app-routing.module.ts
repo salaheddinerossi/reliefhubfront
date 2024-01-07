@@ -15,6 +15,20 @@ import {AdminLoginComponent} from "./features/authentication/pages/admin-login/a
 import {
   OrganizationRegisterComponent
 } from "./features/authentication/pages/organization-register/organization-register.component";
+import {HomeOrganizationComponent} from "./features/organization/pages/home-organization/home-organization.component";
+import {organizationGuard} from "./core/authentication/authentication.guard";
+import {
+  AnnouncementsReliefRequestsComponent
+} from "./features/organization/pages/announcements-releief-requests/announcements-releief-requests.component";
+import {
+  CreateAnnouncementComponent
+} from "./features/organization/pages/create-announcement/create-announcement.component";
+import {
+  OrganizationAnnouncementsComponent
+} from "./features/organization/pages/organization-announcements/organization-announcements.component";
+import {
+  AnnouncementActionsComponent
+} from "./features/organization/pages/announcement-actions/announcement-actions.component";
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -25,7 +39,13 @@ const routes: Routes = [
   {path:"declaration",component:DeclarationComponent},
   {path:"login",component:OrganizationLoginComponent},
   {path:"admin/login",component:AdminLoginComponent},
-  {path:"register",component:OrganizationRegisterComponent}
+  {path:"register",component:OrganizationRegisterComponent},
+  {path:"organization",canActivate: [organizationGuard], component:HomeOrganizationComponent},
+  {path:"organization/announcements/:disasterId",canActivate: [organizationGuard], component:AnnouncementsReliefRequestsComponent},
+  {path:"organization/create-announcement",canActivate: [organizationGuard], component:CreateAnnouncementComponent},
+  {path:"organization/create-announcement:disaterId",canActivate: [organizationGuard], component:CreateAnnouncementComponent},
+  {path:"organization/profile",canActivate:[organizationGuard],component:OrganizationAnnouncementsComponent},
+  {path:"organization/profile/:announcementId",canActivate:[organizationGuard],component:AnnouncementActionsComponent}
 ];
 
 @NgModule({

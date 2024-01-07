@@ -1,0 +1,17 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+    <app-title [title]="title"></app-title>
+    <div class="flex flex-col px-10 py-5">
+        <div *ngFor="let donation of donations" class="mt-5 border border-gray-300 flex justify-between items-center px-6 py-4 border-b ">
+            <span class="font-light text-sm text-gray-600">{{ donation.name }}</span>
+            <span class="font-light text-sm text-gray-600">{{ donation.phone }}</span>
+            <span class="font-light text-sm text-gray-600">{{ donation.address }}</span>
+            <span class="font-light text-sm text-gray-600">{{ donation.targetName }}</span>
+            <div *ngIf="donation.isConfirmed === null">
+                <button class="bg-green-400 text-white px-4 py-2 rounded hover:bg-green-600" (click)="confirmDonation(donation.id)">Confirm</button>
+                <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-600 ml-2" (click)="cancelDonation(donation.id)">Cancel</button>
+            </div>
+            <div *ngIf="donation.isConfirmed === true" class="text-green-400 font-semibold">Confirmed</div>
+            <div *ngIf="donation.isConfirmed === false" class="text-red-400 font-semibold">Canceled</div>
+        </div>
+    </div>
+</app-small-layout>
