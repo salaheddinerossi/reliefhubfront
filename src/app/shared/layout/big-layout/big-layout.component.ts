@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {environment} from "../../../../environment";
 
 @Component({
@@ -8,8 +8,8 @@ import {environment} from "../../../../environment";
 })
 export class BigLayoutComponent {
 
-  defaultNavLinks = environment.defaultNavLinks;
-  zoneTextData = environment.defaultZoneText;
+  @Input() defaultNavLinks = environment.defaultNavLinks;
+  @Input() zoneTextData = environment.defaultZoneText;
   cardsContent = environment.cardsContent
 
 

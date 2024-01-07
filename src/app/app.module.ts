@@ -9,10 +9,13 @@ import {FormsModule} from "@angular/forms";
 import {SubmitHelpModule} from "./features/submit-help/submit-help.module";
 import {FormsHelpModule} from "./features/forms/forms.module";
 import {AuthenticationModule} from "./features/authentication/authentication.module";
+import {OrganizationModule} from "./features/organization/organization.module";
+import {NumberToStringPipe} from "./pipes/number-to-string.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NumberToStringPipe
   ],
   imports: [
     BrowserModule,
@@ -22,10 +25,12 @@ import {AuthenticationModule} from "./features/authentication/authentication.mod
     FormsModule,
     SubmitHelpModule,
     FormsHelpModule,
-    AuthenticationModule
+    AuthenticationModule,
+    OrganizationModule,
   ],
   providers: [],
   exports: [
+    NumberToStringPipe
 
   ],
   bootstrap: [AppComponent]

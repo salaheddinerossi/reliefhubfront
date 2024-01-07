@@ -1,0 +1,48 @@
+<app-small-layout [headerData]="headerData" [defaultNavLinks]="organizationNavLinks">
+  <app-title [title]="title"></app-title>
+  <div class="px-20">
+    <div class="pb-10">
+      <div id="mapId" class="rounded-2xl" style="height: 400px;"></div>
+    </div>
+
+    <div class="flex justify-between items-center my-4">
+      <a class="create-announcement" [routerLink]="['/organization/create-announcement']">Create an announcement</a>
+      <app-green-select-input [options]="selectOptions" [selectedValue]="defaultSelectedValue"
+                              (selectedValueChange)="onSelectChange($event)">
+      </app-green-select-input>
+    </div>
+
+    <div class="flex flex-col lg:flex-row justify-between items-start  my-4 space-y-4 lg:space-y-0 lg:space-x-4">
+      <!-- Announcements Section -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 w-full lg:w-1/2">
+        <h2 class="create-announcement  mb-2">Announcements</h2>
+        <ul>
+          <ng-container *ngFor="let zone of selectedZoneState.zoneObjects">
+            <li *ngFor="let announcement of zone.announcementObjects" class="flex items-center py-2 ">
+              <span class="flex-grow text-xs text-gray-700">{{ announcement.title }}</span>
+              <span class="w-32  pr-4 text-xs text-gray-700">{{ announcement.status }}</span>
+              <a  [routerLink]="['/announcement', announcement.id]" class="flex-shrink-0">
+                <img  src="/assets/icons/eye.png" class="h-7 w-7 p-1 rounded icons-bg" alt="Link to Announcement">
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <!-- Relief Requests Section -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 w-full lg:w-1/2">
+        <h2 class="create-announcement  mb-2">Relief Requests</h2>
+        <ul>
+          <ng-container *ngFor="let zone of selectedZoneState.zoneObjects">
+            <li *ngFor="let request of zone.assistantRequestsObjects" class="flex items-center py-2 ">
+              <span class="flex-grow text-xs text-gray-700">{{ request.expressNeeds }}</span>
+              <a [routerLink]="['/relief-request', request.id]" class="flex-shrink-0">
+                <img src="/assets/icons/eye.png" class="h-7 w-7 p-1 rounded icons-bg" alt="Link to Relief Request">
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</app-small-layout>

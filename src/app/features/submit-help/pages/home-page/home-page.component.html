@@ -1,4 +1,4 @@
-<app-big-layout>
+<app-big-layout [defaultNavLinks]="defaultNavLinks" [zoneTextData]="zoneTextData" >
     <app-world-map *ngIf="disasters.length > 0" [disasters]="disasters" [mapText] = "mapText"></app-world-map>
 
 </app-big-layout>

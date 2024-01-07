@@ -14,7 +14,7 @@ export class FileUploadService {
     constructor(private httpClient: HttpClient) { }
 
     getPresignedUrl(fileName: string): Observable<Url> {
-        return this.httpClient.get<Url>(`http://localhost:8080/presigned-url`, { params: { fileName } });
+        return this.httpClient.get<Url>(`http://143.244.199.239/auth/presigned-url`, { params: { fileName } });
     }
 
     uploadFileToSpaces(file: File): Observable<string> {

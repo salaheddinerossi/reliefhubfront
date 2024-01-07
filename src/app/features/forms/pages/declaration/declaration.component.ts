@@ -52,7 +52,6 @@ export class DeclarationComponent implements OnInit {
       this.marker.remove();
     }
 
-    // Set custom icon here if needed
     const customIcon = L.icon({
       iconUrl: 'assets/icons/pins/redpin.png',
       iconSize: [30, 30],

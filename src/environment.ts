@@ -12,7 +12,22 @@ export const environment = {
     { title: 'Organizations', path: '/organizations' }
   ],
 
+  organizationNavLinks: [
+    { title: 'Home', path: '/' },
+    { title: 'Announcements', path: '/relief-request' },
+    { title: 'profile', path: '/report-disaster' },
+  ],
+
   defaultZoneText:{
+    header:"Disaster Relief Hub",
+    text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
+    greenButtonText:"Partner with us",
+    greenButtonLink:"text1",
+    yellowButtonText:"Explore disasters",
+    yellowButtonLink:"text1",
+  },
+
+  organizationZoneText:{
     header:"Disaster Relief Hub",
     text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
     greenButtonText:"Partner with us",

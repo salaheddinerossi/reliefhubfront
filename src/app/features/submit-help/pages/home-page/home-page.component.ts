@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {environment} from "../../../../../environment";
 import {DisasterServiceService} from "../../services/disater-service.service";
 import {Disaster} from "../../../../models/Disaster";
@@ -26,6 +26,10 @@ export class HomePageComponent  implements OnInit{
         }
     );
   }
+
+  defaultNavLinks=environment.defaultNavLinks;
+  zoneTextData = environment.defaultZoneText;
+
 
 
 }
