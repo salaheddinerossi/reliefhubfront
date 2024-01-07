@@ -12,5 +12,4 @@ export class AdminHomeComponent {
   organizationZoneText=environment.organizationZoneText;
   mapText=environment.mapText;
 
-
 }
