@@ -29,6 +29,17 @@ export class DeclarationComponent implements OnInit {
     }
   };
 
+  emptyDeclaration={
+    fullName: "",
+    phoneNumber: "",
+    address: "",
+    description: "",
+    localisation: {
+      latitude: 0,
+      longitude: 0
+    }
+  };
+
   private map!: L.Map;
   private marker!: L.Marker;
 
@@ -61,12 +72,19 @@ export class DeclarationComponent implements OnInit {
 
     this.marker = L.marker(e.latlng, { icon: customIcon }).addTo(this.map);
 
-    // Update declaration localisation
     this.declaration.localisation.latitude = e.latlng.lat;
     this.declaration.localisation.longitude = e.latlng.lng;
   }
 
   onSubmit() {
-    this.declarationService.createDeclaration(this.declaration);
+    this.declarationService.createDeclaration(this.declaration).subscribe(
+      response => {
+
+        alert("declaration submited")
+        console.log(this.declaration)
+        this.declaration=this.emptyDeclaration
+
+      }
+    );
   }
 }

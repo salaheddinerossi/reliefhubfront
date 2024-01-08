@@ -50,6 +50,19 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
     }
   }
 
+  emptyReliefRequest={
+    fullname:"",
+    phone:"",
+    disasterId:0,
+    address:"",
+    expressNeeds:"",
+    localisation:{
+      latitude:0,
+      longitude:0
+    }
+
+  }
+
   disasterOptions: {label: string, value: any}[] = [];
   disasterZones:DisasterZone[]=[];
   selectPlaceHolder = "select a disaster";
@@ -139,7 +152,17 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
 
   onSubmit() {
     console.log(this.reliefRequest)
-    this.reliefRequestService.submitHelpRequest(this.reliefRequest)
+    this.reliefRequestService.submitHelpRequest(this.reliefRequest).subscribe(
+      response => {
+          this.reliefRequest=this.emptyReliefRequest;
+          alert("relief request submited")
+      },
+      error => {
+        this.reliefRequest=this.emptyReliefRequest;
+        alert("relief request submited")
+
+      }
+    )
 
   }
 }

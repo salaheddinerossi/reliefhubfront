@@ -1,0 +1,25 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+    <app-title [title]="title"></app-title>
+    <div class="px-10 pb-10">
+        <div *ngFor="let organization of organizations" class="px-10 mt-5 border border-gray-300 grid grid-cols-4 gap-4 p-4 items-center">
+            <span class="font-light text-sm text-gray-600 ">{{ organization.name || 'N/A' }}</span>
+            <span class="font-light text-sm text-gray-600 ">{{ organization.email || 'N/A' }}</span>
+            <span class="font-light text-sm text-gray-600 ">{{ organization.address }}</span>
+            <div class="flex justify-end items-center space-x-2">
+                <div *ngIf="organization.isActive===true">
+                    <h2 class="bg-green-400 text-white px-4 py-2 rounded " >approved</h2>
+                </div>
+                <div *ngIf="organization.isActive===null">
+                    <h2 class="bg-yellow-400 text-white px-4 py-2 rounded " >pending</h2>
+                </div>
+                <div *ngIf="organization.isActive===false">
+                    <h2 class="bg-red-400 text-white px-4 py-2 rounded " >refused</h2>
+                </div>
+                <button class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-600" [routerLink]="'/admin/organizations/'+organization.id
+">view</button>
+            </div>
+        </div>
+    </div>
+
+
+</app-small-layout>

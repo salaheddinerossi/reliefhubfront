@@ -21,6 +21,7 @@ import { TitleComponent } from './texts/title/title.component';
 import { DescriptionComponent } from './texts/description/description.component';
 import {FormsModule} from "@angular/forms";
 import { InfoComponent } from './texts/info/info.component';
+import {RouterLink} from "@angular/router";
 
 
 
@@ -45,10 +46,11 @@ import { InfoComponent } from './texts/info/info.component';
         DescriptionComponent,
         InfoComponent,
     ],
-  imports: [
-    CommonModule,
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterLink,
+    ],
     exports: [
         BigLayoutComponent,
         SmallLayoutComponent,
@@ -64,7 +66,8 @@ import { InfoComponent } from './texts/info/info.component';
         GreenSelectInputComponent,
         TitleComponent,
         WorldMapComponent,
-        AnnouncementComponent
+        AnnouncementComponent,
+        InfoComponent
 
     ]
 })

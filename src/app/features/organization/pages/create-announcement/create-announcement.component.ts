@@ -284,7 +284,7 @@ export class CreateAnnouncementComponent implements OnInit{
   createAnnouncement(announcement:AnnouncementForm){
     this.organizationService.createAnnouncement(announcement).subscribe(
         response => {
-          alert("account created")
+          alert("announcement created")
           this.announcementForm=this.emptyAnnouncementForm
           console.log(response)
         },

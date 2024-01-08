@@ -1,1 +1,3 @@
-<p>admin-home works!</p>
+<app-big-layout [defaultNavLinks]="organizationNavLinks" [zoneTextData]="organizationZoneText" >
+  <app-world-map *ngIf="disasters.length > 0" [disasters]="disasters" [mapText] = "mapText"></app-world-map>
+</app-big-layout>

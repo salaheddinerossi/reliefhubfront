@@ -1,0 +1,17 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <app-title [title]="title"></app-title>
+  <div class="px-10 pb-10">
+    <div *ngFor="let declaration of declarations" class="px-10 mt-5 border border-gray-300 grid grid-cols-4 gap-4 p-4 items-center">
+      <span class="font-light text-sm text-gray-600 ">{{ declaration.fullName || 'N/A' }}</span>
+      <span class="font-light text-sm text-gray-600 ">{{ declaration.phoneNumber || 'N/A' }}</span>
+      <span class="font-light text-sm text-gray-600 ">{{ declaration.address }}</span>
+      <div class="flex justify-end items-center space-x-2">
+        <div *ngIf="!declaration.isArchived">
+          <button class="bg-green-400 text-white px-4 py-2 rounded hover:bg-green-600" (click)="archive(declaration.id)">Archive</button>
+        </div>
+        <div *ngIf="declaration.isArchived" class="text-center text-green-400 font-semibold">Archived</div>
+        <button class="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-600" [routerLink]="'/admin/declarations/'+declaration.id">view</button>
+      </div>
+    </div>
+  </div>
+</app-small-layout>

@@ -16,7 +16,7 @@ import {
   OrganizationRegisterComponent
 } from "./features/authentication/pages/organization-register/organization-register.component";
 import {HomeOrganizationComponent} from "./features/organization/pages/home-organization/home-organization.component";
-import {organizationGuard} from "./core/authentication/authentication.guard";
+import {adminGuard, organizationGuard} from "./core/authentication/authentication.guard";
 import {
   AnnouncementsReliefRequestsComponent
 } from "./features/organization/pages/announcements-releief-requests/announcements-releief-requests.component";
@@ -29,6 +29,14 @@ import {
 import {
   AnnouncementActionsComponent
 } from "./features/organization/pages/announcement-actions/announcement-actions.component";
+import {AdminHomeComponent} from "./features/admin/pages/admin-home/admin-home.component";
+import {DisasterCreationComponent} from "./features/admin/pages/disaster-creation/disaster-creation.component";
+import {AdminDeclarationComponent} from "./features/admin/pages/admin-declaration/admin-declaration.component";
+import {DeclarationPageComponent} from "./features/admin/pages/declaration-page/declaration-page.component";
+import {
+  OrganizationManagementComponent
+} from "./features/admin/pages/organization-management/organization-management.component";
+import {OrganizationDetailsComponent} from "./features/admin/pages/organization-details/organization-details.component";
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -45,11 +53,19 @@ const routes: Routes = [
   {path:"organization/create-announcement",canActivate: [organizationGuard], component:CreateAnnouncementComponent},
   {path:"organization/create-announcement:disaterId",canActivate: [organizationGuard], component:CreateAnnouncementComponent},
   {path:"organization/profile",canActivate:[organizationGuard],component:OrganizationAnnouncementsComponent},
-  {path:"organization/profile/:announcementId",canActivate:[organizationGuard],component:AnnouncementActionsComponent}
+  {path:"organization/profile/:announcementId",canActivate:[organizationGuard],component:AnnouncementActionsComponent},
+  {path:"admin",canActivate:[adminGuard],component:AdminHomeComponent},
+  {path:"admin/create-disaster",canActivate:[adminGuard],component:DisasterCreationComponent},
+  {path:"admin/declarations",canActivate:[adminGuard],component:AdminDeclarationComponent},
+  {path:"admin/declarations/:declarationId",canActivate:[adminGuard],component:DeclarationPageComponent},
+  {path:"admin/organizations",canActivate:[adminGuard],component:OrganizationManagementComponent},
+  {path:"admin/organizations/:organizationId",canActivate:[adminGuard],component:OrganizationDetailsComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }

@@ -7,18 +7,38 @@ export const environment = {
 
   defaultNavLinks: [
     { title: 'Home', path: '/' },
-    { title: 'Relief Request', path: '/relief-request' },
-    { title: 'Report a Disaster', path: '/report-disaster' },
-    { title: 'Organizations', path: '/organizations' }
+    { title: 'Relief Request', path: '/relief' },
+    { title: 'Report a Disaster', path: '/declaration' },
+    { title: 'Organizations', path: '/login' }
   ],
 
   organizationNavLinks: [
+    { title: 'Home', path: '/organization' },
+    { title: 'P' +
+          '' +
+          '' +
+          '0rofile', path: '/organization/profile' },
+    { title: 'Log out', path: '/organization/logout' },
+  ],
+
+  adminNavLinks: [
     { title: 'Home', path: '/' },
-    { title: 'Announcements', path: '/relief-request' },
-    { title: 'profile', path: '/report-disaster' },
+    { title: 'Disasters', path: '/relief-request' },
+    { title: 'organizations', path: '/report-disaster' },
+    { title: 'Disaster Alerts', path: '/' },
+    { title: 'LogOut', path: '/relief-request' },
   ],
 
   defaultZoneText:{
+    header:"Disaster Relief Hub",
+    text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
+    greenButtonText:"Partner with us",
+    greenButtonLink:"/register",
+    yellowButtonText:"Explore disasters",
+    yellowButtonLink:"text1",
+  },
+
+  organizationZoneText:{
     header:"Disaster Relief Hub",
     text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
     greenButtonText:"Partner with us",
@@ -27,7 +47,7 @@ export const environment = {
     yellowButtonLink:"text1",
   },
 
-  organizationZoneText:{
+  adminZoneText:{
     header:"Disaster Relief Hub",
     text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
     greenButtonText:"Partner with us",

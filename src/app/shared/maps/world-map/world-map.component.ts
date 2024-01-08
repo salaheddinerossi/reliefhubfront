@@ -5,9 +5,9 @@ import {Router} from "@angular/router";
 
 const customIcon = L.icon({
   iconUrl: 'assets/icons/pins/redpin.png',
-  iconSize: [30, 30], // Square size (width, height)
-  iconAnchor: [15, 30], // Adjust if needed
-  popupAnchor: [0, -15] // Adjust if needed
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -15]
 
 });
 
@@ -35,8 +35,6 @@ export class WorldMapComponent implements OnInit{
     console.log(this.disasters)
   }
 
-
-
   private initMap(): void {
     this.map = L.map('map').setView([0,0], 2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,7 +46,7 @@ export class WorldMapComponent implements OnInit{
       L.marker([disaster.center.latitude, disaster.center.longitude],{ icon: customIcon })
         .addTo(this.map)
         .on('click', () => {
-        this.zone.run(() => this.router.navigate(["/announcements"]));
+        this.zone.run(() => this.router.navigate([disaster.link]));
 
       });
     });
