@@ -15,6 +15,7 @@ export const environment = {
   organizationNavLinks: [
     { title: 'Home', path: '/organization' },
     { title: 'Profile', path: '/organization/profile' },
+    { title: 'create announcement', path: '/organization/create-announcement' },
     { title: 'log out', path: '/logout' },
   ],
 
@@ -38,19 +39,19 @@ export const environment = {
   organizationZoneText:{
     header:"Disaster Relief Hub",
     text:"Dive into the heart of disaster zones and craft compelling announcements to recruit and activate your forces",
-    greenButtonText:"Partner with us",
-    greenButtonLink:"text1",
-    yellowButtonText:"Explore disasters",
-    yellowButtonLink:"text1",
+    greenButtonText:"view profile",
+    greenButtonLink:"/organization/profile",
+    yellowButtonText:"start helping",
+    yellowButtonLink:"/organization/create-announcement",
   },
 
   adminZoneText:{
     header:"Disaster Relief Hub",
     text:"Together, we're Building the Bridge: One hand, one step, one act of kindness at a time.",
-    greenButtonText:"Partner with us",
-    greenButtonLink:"text1",
-    yellowButtonText:"Explore disasters",
-    yellowButtonLink:"text1",
+    greenButtonText:"Organizations",
+    greenButtonLink:"admin/organizations",
+    yellowButtonText:"view declarations",
+    yellowButtonLink:"/admin/declarations",
   },
 
   cardsContent:{
