@@ -12,7 +12,7 @@
             <span class="text-sm font-light text-xs text-gray-700">{{ target.currentValue / target.targetValue | percent }}</span>
           </div>
           <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-            <div class="bg-blue-600 h-2.5 rounded-full" [style.width]="(target.currentValue / target.targetValue * 100) + '%'"></div>
+            <div class="bg-blue-600 h-2.5 rounded-full" [style.width]="Math.min(target.currentValue / target.targetValue * 100, 100) + '%'"></div>
           </div>
           <div class="flex justify-between items-center pt-4 ">
             <span class="text-gray-500 text-sm needed font-light">{{ target.currentValue }} of {{ target.targetValue }} needed</span>

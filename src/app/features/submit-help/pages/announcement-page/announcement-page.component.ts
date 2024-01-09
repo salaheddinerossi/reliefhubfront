@@ -120,4 +120,5 @@ export class AnnouncementPageComponent implements OnInit , AfterViewInit {
     this.router.navigate([`/help/${id}`]);
   }
 
+    protected readonly Math = Math;
 }
