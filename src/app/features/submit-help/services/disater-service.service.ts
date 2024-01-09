@@ -15,7 +15,7 @@ export class DisasterServiceService {
   getDisasters(): Observable<Disaster[]> {
     return this.api.get<any[]>('/disaster/disaster/').pipe(
         map(data => data.map(item => ({
-          link: `/disaster/${item.id}`,
+          link: `/announcements/${item.id}`,
           name: item.name,
           center: {
             latitude: item.center.latitude,
@@ -25,5 +25,17 @@ export class DisasterServiceService {
     );
   }
 
+    getDisastersForOrganizations(): Observable<Disaster[]> {
+        return this.api.get<any[]>('/disaster/disaster/').pipe(
+            map(data => data.map(item => ({
+                link: `/organization/announcements/${item.id}`,
+                name: item.name,
+                center: {
+                    latitude: item.center.latitude,
+                    longitude: item.center.longitude
+                } as PointDto
+            })) as Disaster[])
+        );
+    }
 
 }

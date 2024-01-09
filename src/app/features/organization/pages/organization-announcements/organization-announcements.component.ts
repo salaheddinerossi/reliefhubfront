@@ -13,8 +13,8 @@ export class OrganizationAnnouncementsComponent implements OnInit{
   constructor(private organizationService:OrganizationService) {
   }
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.organizationNavLinks;
+  headerData = environment.organization3;
   title = "My announcements";
 
   announcements:Announcement[]=[];

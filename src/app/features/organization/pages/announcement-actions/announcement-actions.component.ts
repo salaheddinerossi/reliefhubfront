@@ -3,6 +3,7 @@ import {environment} from "../../../../../environment";
 import {OrganizationService} from "../../services/organization.service";
 import {ActivatedRoute} from "@angular/router";
 import {Donation} from "../../models/Donation";
+import {Status} from "../../models/Status";
 
 @Component({
   selector: 'app-announcement-actions',
@@ -11,9 +12,18 @@ import {Donation} from "../../models/Donation";
 })
 export class AnnouncementActionsComponent implements OnInit{
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+
+
+  defaultNavLinks = environment.organizationNavLinks;
+  headerData = environment.organization4;
   title = "Help confirmations";
+
+  statuses = [
+    { label: 'Active', value: 'ACTIVE' },
+    { label: 'Completed', value: 'COMPLETED' },
+    { label: 'In Road', value: 'INROAD' }
+  ];
+
 
   donations: Donation[] = [];
 
@@ -21,11 +31,17 @@ export class AnnouncementActionsComponent implements OnInit{
   constructor(private organizationService:OrganizationService,private route:ActivatedRoute) {
   }
 
+
+  status:Status={
+    id:0,
+    status:""
+  }
   ngOnInit(): void {
 
     const announcementId = this.route.snapshot.paramMap.get('announcementId');
     if (announcementId) {
       this.getDonations(announcementId);
+      this.status.id=parseInt(announcementId)
     }
 
   }
@@ -37,6 +53,8 @@ export class AnnouncementActionsComponent implements OnInit{
             if (a.isConfirmed === null) return -1;
             if (b.isConfirmed === null) return 1;
             return 0;
+
+
           });
         },
         error => {
@@ -80,5 +98,21 @@ export class AnnouncementActionsComponent implements OnInit{
 
       }
     });
+  }
+
+  onStatusChange(newStatus: string) {
+    this.status.status = newStatus;
+    this.changeStatus();
+  }
+
+
+  changeStatus() {
+    this.organizationService.changeStatus(this.status).subscribe(
+      response => {
+        alert("status changed")
+      },
+      error => {
+      }
+    );
   }
 }

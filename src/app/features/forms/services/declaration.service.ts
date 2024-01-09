@@ -10,9 +10,6 @@ export class DeclarationService {
   constructor(private api:ApiService) { }
 
   createDeclaration(declaration:Declaration){
-    this.api.post('disaster/declaration/' , declaration).subscribe(
-      response => console.log(response),
-      error => console.error(error)
-    )
+    return this.api.post('disaster/declaration/' , declaration)
   }
 }

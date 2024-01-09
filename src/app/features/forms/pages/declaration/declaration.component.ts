@@ -15,10 +15,21 @@ export class DeclarationComponent implements OnInit {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.form2;
   title = "declare a disaster";
 
   declaration: Declaration = {
+    fullName: "",
+    phoneNumber: "",
+    address: "",
+    description: "",
+    localisation: {
+      latitude: 0,
+      longitude: 0
+    }
+  };
+
+  emptyDeclaration={
     fullName: "",
     phoneNumber: "",
     address: "",
@@ -61,12 +72,19 @@ export class DeclarationComponent implements OnInit {
 
     this.marker = L.marker(e.latlng, { icon: customIcon }).addTo(this.map);
 
-    // Update declaration localisation
     this.declaration.localisation.latitude = e.latlng.lat;
     this.declaration.localisation.longitude = e.latlng.lng;
   }
 
   onSubmit() {
-    this.declarationService.createDeclaration(this.declaration);
+    this.declarationService.createDeclaration(this.declaration).subscribe(
+      response => {
+
+        alert("declaration submited")
+        console.log(this.declaration)
+        this.declaration=this.emptyDeclaration
+
+      }
+    );
   }
 }

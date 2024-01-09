@@ -7,29 +7,46 @@ export const environment = {
 
   defaultNavLinks: [
     { title: 'Home', path: '/' },
-    { title: 'Relief Request', path: '/relief-request' },
-    { title: 'Report a Disaster', path: '/report-disaster' },
-    { title: 'Organizations', path: '/organizations' }
+    { title: 'Relief Request', path: '/relief' },
+    { title: 'Report a Disaster', path: '/declaration' },
+    { title: 'Organizations', path: '/login' }
   ],
 
   organizationNavLinks: [
-    { title: 'Home', path: '/' },
-    { title: 'Announcements', path: '/relief-request' },
-    { title: 'profile', path: '/report-disaster' },
+    { title: 'Home', path: '/organization' },
+    { title: 'Profile', path: '/organization/profile' },
+    { title: 'log out', path: '/logout' },
+  ],
+
+  adminNavLinks: [
+    { title: 'Home', path: '/admin' },
+    { title: 'Disasters', path: '/admin/create-disaster' },
+    { title: 'organizations', path: '/admin/organizations' },
+    { title: 'Disaster Alerts', path: '/admin/declarations' },
+    { title: 'Log out', path: '/logout' },
   ],
 
   defaultZoneText:{
     header:"Disaster Relief Hub",
     text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
     greenButtonText:"Partner with us",
-    greenButtonLink:"text1",
+    greenButtonLink:"/register",
     yellowButtonText:"Explore disasters",
     yellowButtonLink:"text1",
   },
 
   organizationZoneText:{
     header:"Disaster Relief Hub",
-    text:"A platform to connect victims, volunteers, and organizations for effective disaster relief efforts",
+    text:"Dive into the heart of disaster zones and craft compelling announcements to recruit and activate your forces",
+    greenButtonText:"Partner with us",
+    greenButtonLink:"text1",
+    yellowButtonText:"Explore disasters",
+    yellowButtonLink:"text1",
+  },
+
+  adminZoneText:{
+    header:"Disaster Relief Hub",
+    text:"Together, we're Building the Bridge: One hand, one step, one act of kindness at a time.",
     greenButtonText:"Partner with us",
     greenButtonLink:"text1",
     yellowButtonText:"Explore disasters",
@@ -73,10 +90,100 @@ export const environment = {
   },
 
   helpAnnouncementHeader:{
-    imageLink:'/assets/images/header-images/small-header/smallHeader1.png',
+    imageLink:'/assets/images/header-images/small-header/header1.png',
     title:"Help announcement",
     title2:"Be the Change You Want to See"
   },
+  submitHelp2:{
+    imageLink:'/assets/images/header-images/small-header/header1.png',
+    title:"Start your journey of making a difference right here",
+    title2:"Be the Change You Want to See"
+  },
+  form1:{
+    imageLink:'/assets/images/header-images/small-header/formHeader.png',
+    title:"Lend Your Strength and Join the Relief Effort",
+    title2:"Be the Change You Want to See"
+  },
+  form2:{
+    imageLink:'/assets/images/header-images/small-header/formHeader.png',
+    title:"Share Critical Information to Save Lives",
+    title2:"Be the Change You Want to See"
+  },
+  form3:{
+    imageLink:'/assets/images/header-images/small-header/formHeader.png',
+    title:"Tell Us How We Can Help: Together, We'll Get Through This",
+    title2:"Be the Change You Want to See"
+  },
+
+  organization1:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Visualize Impact Areas, Target Your Response",
+    title2:"Be the Change You Want to See"
+  },
+  organization2:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Craft an Announcement and Unleash the Power of Help",
+    title2:"Be the Change You Want to See"
+  },
+
+  organization3:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Unified View of Ongoing Relief Efforts",
+    title2:"Be the Change You Want to See"
+  },
+
+  organization4:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Connect the Right Volunteers with the Right Needs",
+    title2:"Be the Change You Want to See"
+  },
+
+  admin1:{
+    imageLink:'/assets/images/header-images/small-header/adminHeader1.png',
+    title:"Add Disaster Pins to Spark Collective Action",
+    title2:"Be the Change You Want to See"
+  },
+
+  admin2:{
+    imageLink:'/assets/images/header-images/small-header/adminHeader1.png',
+    title:"Greenlighting Goodwill: Validating Credentials and Empowering Action",
+    title2:"Be the Change You Want to See"
+  },
+  admin3:{
+    imageLink:'/assets/images/header-images/small-header/adminHeader1.png',
+    title:"Organization Details ",
+    title2:"Be the Change You Want to See"
+  },
+
+  admin4:{
+    imageLink:'/assets/images/header-images/small-header/adminHeader1.png',
+    title:"Responding to Urgent Calls for Help",
+    title2:"Be the Change You Want to See"
+  },
+
+  admin5:{
+    imageLink:'/assets/images/header-images/small-header/adminHeader1.png',
+    title:"Disaster Alerts",
+    title2:"Be the Change You Want to See"
+  },
+
+  login:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Log in to Make a Difference",
+    title2:"Be the Change You Want to See"
+  },
+
+  signup:{
+    imageLink:'/assets/images/header-images/small-header/headerOrganization.png',
+    title:"Sign Up to Help Those in Need",
+    title2:"Be the Change You Want to See"
+  },
+
+
+
+
+
+
   mapText:{
     title:"Visualize Areas in Need",
     subTitle:"Explore our interactive map to see real-time update on areas requering assistance.",

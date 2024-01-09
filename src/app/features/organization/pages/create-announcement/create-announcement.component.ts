@@ -39,7 +39,7 @@ export class CreateAnnouncementComponent implements OnInit{
   disasterNames:DisasterName[]= []
   authorizations :Authorization[]= [];
 
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.organization2;
   organizationNavLinks=environment.organizationNavLinks;
 
 
@@ -284,7 +284,7 @@ export class CreateAnnouncementComponent implements OnInit{
   createAnnouncement(announcement:AnnouncementForm){
     this.organizationService.createAnnouncement(announcement).subscribe(
         response => {
-          alert("account created")
+          alert("announcement created")
           this.announcementForm=this.emptyAnnouncementForm
           console.log(response)
         },

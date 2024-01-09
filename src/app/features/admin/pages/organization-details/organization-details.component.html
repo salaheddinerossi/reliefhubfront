@@ -1,0 +1,52 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+    <app-title [title]="title"></app-title>
+
+    <div class="px-20 ">
+        <div class="flex py-8">
+            <app-info [icon]="'/assets/icons/email.png'" [text]="organization.email"></app-info>
+            <div class="ml-5">
+                <app-info [icon]="'/assets/icons/position.png'" [text]="organization.address"></app-info>
+            </div>
+        </div>
+        <p class="text-sm font-medium text-gray-700 pb-10">
+            {{organization.description}}
+        </p>
+        <div class="flex pb-8   ">
+            <div *ngIf="organization.isActive !== null" class="flex items-center">
+                <p class="pr-4" >Change state:</p>
+                <app-green-select-input
+                        [options]="isActiveOptions"
+                        [selectedValue]="organization.isActive"
+                        (selectedValueChange)="onActiveStateChange($event)"
+                ></app-green-select-input>
+            </div>
+
+            <div *ngIf="organization.isActive===null" >
+                <button class="bg-green-400 text-white px-4 py-2 rounded " (click)="activateOrganization(organization.id)" >active</button>
+                <button class="bg-red-400 text-white px-4 py-2 rounded ml-4" (click)="refuseOrganization(organization.id)" >refuse</button>
+            </div>
+
+            <a [href]="organization.documents" download class="bg-yellow-400 text-white px-4 py-2 rounded ml-4">
+                view documents
+            </a>
+
+
+
+
+        </div>
+
+        <div class="flex flex-col py-8">
+            <p class="text-lg font-semibold">Authorizations:</p>
+            <div *ngFor="let auth of authorizations" class="flex items-center py-2" >
+                <span class="font-medium text-gray-800">{{ auth.name }}</span>
+                <span *ngIf="organizationAuthorizations.includes(auth.id)" class="ml-4 text-green-500">Linked</span>
+                <button *ngIf="!organizationAuthorizations.includes(auth.id)"
+                        (click)="linkAuthorization(auth.id)"
+                        class="bg-blue-400 text-white px-4 py-2 rounded ml-4">Add</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</app-small-layout>

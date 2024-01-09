@@ -26,7 +26,7 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.form3;
   title="Relief request"
 
   private map!: L.Map;
@@ -48,6 +48,19 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
       latitude:0,
       longitude:0
     }
+  }
+
+  emptyReliefRequest={
+    fullname:"",
+    phone:"",
+    disasterId:0,
+    address:"",
+    expressNeeds:"",
+    localisation:{
+      latitude:0,
+      longitude:0
+    }
+
   }
 
   disasterOptions: {label: string, value: any}[] = [];
@@ -139,7 +152,17 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
 
   onSubmit() {
     console.log(this.reliefRequest)
-    this.reliefRequestService.submitHelpRequest(this.reliefRequest)
+    this.reliefRequestService.submitHelpRequest(this.reliefRequest).subscribe(
+      response => {
+          this.reliefRequest=this.emptyReliefRequest;
+          alert("relief request submited")
+      },
+      error => {
+        this.reliefRequest=this.emptyReliefRequest;
+        alert("relief request submited")
+
+      }
+    )
 
   }
 }

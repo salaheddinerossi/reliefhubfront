@@ -42,3 +42,22 @@ export const adminGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: 
   router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
   return false;
 };
+
+export const generalUserGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  const authService = inject(AuthenticationService);
+  const router = inject(Router);
+  const role = extractRoleFromToken(authService);
+
+  if ( role == 'ROLE_ORGANIZATION') {
+    router.navigate(['/organization']);
+    return false;
+  }
+
+  if (role == 'ROLE_ADMIN' ) {
+    router.navigate(['/admin']);
+    return false;
+  }
+
+
+  return true;
+};

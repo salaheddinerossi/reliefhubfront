@@ -26,10 +26,7 @@ export class ReliefRequestService {
   }
 
   submitHelpRequest(reliefRequest:ReliefRequest){
-    this.api.post("assistancerequest/",reliefRequest).subscribe(
-      response => console.log(response),
-      error => console.error(error)
-    )
+    return this.api.post("assistancerequest/",reliefRequest)
   }
 
 

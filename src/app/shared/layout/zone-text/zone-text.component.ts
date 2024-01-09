@@ -24,4 +24,10 @@ export class ZoneTextComponent {
   navigateTo(s: string) {
     this.router.navigate([s]);
   }
+
+  scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    element?.scrollIntoView({ behavior: 'smooth', });
+  }
+
 }

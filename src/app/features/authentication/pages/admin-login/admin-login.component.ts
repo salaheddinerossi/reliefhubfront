@@ -15,7 +15,7 @@ export class AdminLoginComponent {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.login;
   title = "Login as an admin";
 
   buttonText:string = "Login";
@@ -24,8 +24,6 @@ export class AdminLoginComponent {
     email:"",
     password:""
   }
-
-
 
   onSubmit() {
 

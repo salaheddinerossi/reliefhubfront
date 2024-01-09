@@ -1,0 +1,35 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+  <app-title [title]="title"></app-title>
+  <form class="px-10" (ngSubmit)="onSubmit()">
+    <app-small-input
+      [placeholder]="'name'"
+      [type]="'text'"
+      [(value)]="disasterForm.name"
+      [name]="'name'"
+
+    ></app-small-input>
+
+    <div class="py-6">
+      <app-text-area
+        [placeholder]="'description'"
+        [(value)]="disasterForm.description"
+        [name]="'description'"
+      >
+      </app-text-area>
+
+
+
+    </div>
+
+    <div class="pb-5">
+      <input type="file" (change)="onFileSelected($event)">
+    </div>
+
+    <div class="pb-10">
+      <app-large-submite-button text="Create disaster"></app-large-submite-button>
+
+    </div>
+
+
+  </form>
+</app-small-layout>

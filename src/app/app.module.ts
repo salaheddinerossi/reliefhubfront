@@ -11,6 +11,7 @@ import {FormsHelpModule} from "./features/forms/forms.module";
 import {AuthenticationModule} from "./features/authentication/authentication.module";
 import {OrganizationModule} from "./features/organization/organization.module";
 import {NumberToStringPipe} from "./pipes/number-to-string.pipe";
+import {AdminModule} from "./features/admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {NumberToStringPipe} from "./pipes/number-to-string.pipe";
     FormsHelpModule,
     AuthenticationModule,
     OrganizationModule,
+    AdminModule
   ],
   providers: [],
   exports: [

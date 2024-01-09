@@ -27,7 +27,7 @@ export class HomeOrganizationComponent {
   }
 
   getDisasters(){
-    this.disasterService.getDisasters().subscribe(
+    this.disasterService.getDisastersForOrganizations().subscribe(
       data => {
         this.disasters = data
       }

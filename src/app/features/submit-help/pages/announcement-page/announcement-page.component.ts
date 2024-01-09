@@ -59,7 +59,7 @@ export class AnnouncementPageComponent implements OnInit , AfterViewInit {
 
   title=environment.helpAnnouncementHeader.title2
   defaultNavLinks = environment.defaultNavLinks;
-  headerData=environment.helpAnnouncementHeader;
+  headerData=environment.submitHelp2;
 
 
 

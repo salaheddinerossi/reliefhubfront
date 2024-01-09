@@ -8,6 +8,7 @@ import { CreateAnnouncementComponent } from './pages/create-announcement/create-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrganizationAnnouncementsComponent } from './pages/organization-announcements/organization-announcements.component';
 import { AnnouncementActionsComponent } from './pages/announcement-actions/announcement-actions.component';
+import { ReliefRequestPageComponent } from './pages/relief-request-page/relief-request-page.component';
 
 
 
@@ -17,7 +18,8 @@ import { AnnouncementActionsComponent } from './pages/announcement-actions/annou
     AnnouncementsReliefRequestsComponent,
     CreateAnnouncementComponent,
     OrganizationAnnouncementsComponent,
-    AnnouncementActionsComponent
+    AnnouncementActionsComponent,
+    ReliefRequestPageComponent
   ],
     imports: [
         CommonModule,

@@ -12,6 +12,8 @@ import {AnnouncementForm} from "../models/AnnouncementForm";
 import {Announcement} from "../../../models/Announcement";
 import {ApiResponse} from "../models/ApiResponse";
 import {Donation} from "../models/Donation";
+import {Status} from "../models/Status";
+import {ReliefRequest} from "../models/ReliefRequest";
 
 
 
@@ -121,7 +123,7 @@ export class OrganizationService {
         return this.api.get<ApiResponse[]>('announcement/announcements/organization').pipe(
             map((data: ApiResponse[]) =>
                 data.map(item => ({
-                    link: item.link,
+                    link: 'organization/profile/'+item.id,
                     image: item.image,
                     title: item.title,
                     description: item.description,
@@ -157,6 +159,21 @@ export class OrganizationService {
         return this.api.patch('submithelp/volunteerInfo/cancel/'+id)
     }
 
+    changeStatus(status:Status){
+       return this.api.post("announcement/announcements/changeStatus",status)
+    }
 
-
+  getReliefRequest(id: string) {
+    return this.api.get<ReliefRequest>("assistancerequest/" + id).pipe(
+      map(data => {
+        return {
+          id: data.id,
+          fullname: data.fullname,
+          phone: data.phone,
+          address: data.address,
+          expressNeeds: data.expressNeeds
+        } as ReliefRequest;
+      })
+    );
+  }
 }

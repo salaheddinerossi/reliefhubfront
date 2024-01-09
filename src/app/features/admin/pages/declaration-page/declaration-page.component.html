@@ -1,0 +1,18 @@
+<app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
+    <app-title [title]="title"></app-title>
+
+    <div class="px-20 ">
+        <div class="rounded-2xl" id="map" style="height: 300px;"></div>
+        <div class="flex py-8">
+            <app-info [icon]="'/assets/icons/phone1.png'" [text]="declaration.phoneNumber"></app-info>
+            <div class="ml-5">
+                <app-info [icon]="'/assets/icons/position.png'" [text]="declaration.address"></app-info>
+            </div>
+        </div>
+        <p class="text-sm font-medium text-gray-700 pb-10">
+            {{declaration.description}}
+        </p>
+        <button *ngIf="!declaration.isArchived" (click)="archive(declaration.id)" class="green px-4 py-1 rounded mb-10">archive</button>
+    </div>
+
+</app-small-layout>

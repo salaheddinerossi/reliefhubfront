@@ -16,7 +16,7 @@ export class OrganizationLoginComponent {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.login;
   title = "Login as an organization";
 
 
