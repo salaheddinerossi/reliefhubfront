@@ -32,8 +32,8 @@ export class OrganizationDetailsComponent implements OnInit{
 
 
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.adminNavLinks;
+  headerData = environment.admin3;
   title = "Organization Details";
 
   isActiveOptions = [

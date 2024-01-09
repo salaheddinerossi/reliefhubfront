@@ -18,7 +18,7 @@ export class OrganizationRegisterComponent {
 
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.signup;
   title = "register as an organization";
 
   organizationRegister:OrganizationRegister={

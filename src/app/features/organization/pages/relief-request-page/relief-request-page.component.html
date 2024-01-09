@@ -1,0 +1,16 @@
+<app-small-layout [headerData]="headerData" [defaultNavLinks]="organizationNavLinks">
+  <app-title [title]="title"></app-title>
+
+  <div class="container mx-auto p-6 bg-white shadow-md rounded">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Relief Request Details</h2>
+    <div *ngIf="reliefRequest" class="space-y-3">
+      <p class="text-gray-700"><span class="font-medium">Full Name:</span> {{ reliefRequest.fullname }}</p>
+      <p class="text-gray-700"><span class="font-medium">Phone:</span> {{ reliefRequest.phone }}</p>
+      <p class="text-gray-700"><span class="font-medium">Address:</span> {{ reliefRequest.address }}</p>
+      <p class="text-gray-700"><span class="font-medium">Express Needs:</span> {{ reliefRequest.expressNeeds }}</p>
+    </div>
+    <div *ngIf="!reliefRequest" class="text-gray-700">
+      <p>Loading relief request information...</p>
+    </div>
+  </div>
+</app-small-layout>

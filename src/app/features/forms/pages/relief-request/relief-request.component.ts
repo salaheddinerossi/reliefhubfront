@@ -26,7 +26,7 @@ export class ReliefRequestComponent implements OnInit,AfterViewInit {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.form3;
   title="Relief request"
 
   private map!: L.Map;

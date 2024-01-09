@@ -1,6 +1,13 @@
 <app-small-layout [defaultNavLinks]="defaultNavLinks" [headerData]="headerData">
     <app-title [title]="title"></app-title>
     <div class="flex flex-col px-10 py-5">
+      <div class="text-left">
+        <app-green-select-input
+          [options]="statuses"
+          [(selectedValue)]="status.status"
+          (selectedValueChange)="onStatusChange($event)">
+        </app-green-select-input>
+      </div>
         <div *ngFor="let donation of donations" class="mt-5 border border-gray-300 flex justify-between items-center px-6 py-4 border-b ">
             <span class="font-light text-sm text-gray-600">{{ donation.name }}</span>
             <span class="font-light text-sm text-gray-600">{{ donation.phone }}</span>

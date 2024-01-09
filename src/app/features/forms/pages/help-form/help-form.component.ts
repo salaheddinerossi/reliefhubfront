@@ -17,7 +17,7 @@ export class HelpFormComponent implements OnInit {
   formValues: { [key: string]: any } = {};
   titlePage: string = '';
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.form1;
 
   constructor(
     private helpFormService: HelpFormService,

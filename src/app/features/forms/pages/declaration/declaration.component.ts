@@ -15,7 +15,7 @@ export class DeclarationComponent implements OnInit {
   }
 
   defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.form2;
   title = "declare a disaster";
 
   declaration: Declaration = {

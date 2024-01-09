@@ -15,8 +15,8 @@ export class OrganizationManagementComponent implements OnInit{
 
   organizations:Organization[] = [];
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.adminNavLinks;
+  headerData = environment.admin2;
   title = "Organizations";
 
   ngOnInit() {

@@ -14,8 +14,8 @@ export class AdminDeclarationComponent implements OnInit{
   constructor(private adminService:AdminService) {
   }
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.adminNavLinks;
+  headerData = environment.admin4;
   title = "declaration management";
 
 

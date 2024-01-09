@@ -13,8 +13,8 @@ export class DisasterCreationComponent implements OnInit{
   constructor(private adminService:AdminService) {
   }
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.adminNavLinks;
+  headerData = environment.admin1;
   title = "Create a disaster";
 
   emptyDisasterForm: DisasterForm = {

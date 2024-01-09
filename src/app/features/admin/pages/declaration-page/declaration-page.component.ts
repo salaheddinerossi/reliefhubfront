@@ -38,8 +38,8 @@ export class DeclarationPageComponent implements OnInit,AfterViewInit {
   declaration=this.emptyDeclaration;
 
 
-  defaultNavLinks = environment.defaultNavLinks;
-  headerData = environment.helpAnnouncementHeader;
+  defaultNavLinks = environment.adminNavLinks;
+  headerData = environment.admin5;
   title = "Review a declaration";
 
 

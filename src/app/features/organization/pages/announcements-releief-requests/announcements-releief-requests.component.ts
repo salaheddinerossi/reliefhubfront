@@ -30,7 +30,7 @@ export class AnnouncementsReliefRequestsComponent implements OnInit{
   private zoneLayerGroup!: L.LayerGroup;
 
 
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.organization1;
   organizationNavLinks=environment.organizationNavLinks;
 
 

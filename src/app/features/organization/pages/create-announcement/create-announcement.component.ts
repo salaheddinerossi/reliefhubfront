@@ -39,7 +39,7 @@ export class CreateAnnouncementComponent implements OnInit{
   disasterNames:DisasterName[]= []
   authorizations :Authorization[]= [];
 
-  headerData = environment.helpAnnouncementHeader;
+  headerData = environment.organization2;
   organizationNavLinks=environment.organizationNavLinks;
 
 

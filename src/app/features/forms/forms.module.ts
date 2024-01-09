@@ -5,6 +5,7 @@ import { HelpFormComponent } from './pages/help-form/help-form.component';
 import {FormsModule} from "@angular/forms";
 import { ReliefRequestComponent } from './pages/relief-request/relief-request.component';
 import { DeclarationComponent } from './pages/declaration/declaration.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 
 
@@ -13,6 +14,7 @@ import { DeclarationComponent } from './pages/declaration/declaration.component'
     HelpFormComponent,
     ReliefRequestComponent,
     DeclarationComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,

@@ -36,7 +36,7 @@
           <ng-container *ngFor="let zone of selectedZoneState.zoneObjects">
             <li *ngFor="let request of zone.assistantRequestsObjects" class="flex items-center py-2 ">
               <span class="flex-grow text-xs text-gray-700">{{ request.expressNeeds }}</span>
-              <a [routerLink]="['/relief-request', request.id]" class="flex-shrink-0">
+              <a [routerLink]="['/organization/relief-request/', request.id]" class="flex-shrink-0">
                 <img src="/assets/icons/eye.png" class="h-7 w-7 p-1 rounded icons-bg" alt="Link to Relief Request">
               </a>
             </li>
